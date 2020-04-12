@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<input id="txtValue">
+<button onclick="showContent()">Search</button>
+<span id="result"></span>
+<script>
+    let E = ["red", "green", "white", "black"];
+    let V = ["đỏ", "lục", "trắng", "đen"];
+    let result, index=-1;
+    function showContent() {
+        let input = document.getElementById("txtValue").value;
+        for (let i = 0; i < E.length; i++) {
+            if (input == E[i]) {
+                index = i;
+                break;
+            }
+        }
+        if (index != -1) {
+            result = document.getElementById("result").innerHTML = '<br><br>' + 'Dịch nghĩa: ' + V[index];
+        } else {
+            result = document.getElementById("result").innerHTML = '<br><br>' + 'Từ khóa "' + inputValue + '" không có trong từ điển'
+        }
+    }
+</script>
+</body>
+</html>
